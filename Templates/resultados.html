@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
+</head>
+<body>
+    <div class="imagen-header"></div> 
+    <div class="container">
+        <h1>
+            <img src="{{ url_for('static', filename='Images/logo2.png') }}" alt="Logo" class="logo-titulo">
+            Resultados de la Búsqueda
+        </h1>
+        <div class="ofertas-container">
+            <!-- Sección de Jora -->
+            <div class="ofertas-section jora">
+                <h2>
+                    <img src="{{ url_for('static', filename='Images/jora_logo.png') }}" alt="Jora Logo">
+                    Ofertas de Jora
+                </h2>
+                {% if ofertas_jora %}
+                    <div class="ofertas-lista">
+                        {% for oferta in ofertas_jora %}
+                            <div class="oferta">
+                                <h3>{{ oferta['titulo'] }}</h3>
+                                <p><strong>Empresa:</strong> {{ oferta['empresa'] }}</p>
+                                <p><strong>Ubicación:</strong> {{ oferta['ubicacion'] }}</p>
+                                <a class="btn-ver-oferta" href="{{ oferta['link'] }}" target="_blank">Ver oferta</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No se encontraron ofertas en Jora.</p>
+                {% endif %}
+            </div>
+
+            <!-- Sección de Trabajando.pe -->
+            <div class="ofertas-section">
+                <h2>
+                    <img src="{{ url_for('static', filename='Images/trabajando_logo.png') }}" alt="Trabajando.pe Logo">
+                    Ofertas de Trabajando.pe
+                </h2>
+                {% if ofertas_trabajando %}
+                    <div class="ofertas-lista">
+                        {% for oferta in ofertas_trabajando %}
+                            <div class="oferta">
+                                <h3>{{ oferta['titulo'] }}</h3>
+                                <p><strong>Empresa:</strong> {{ oferta['empresa'] }}</p>
+                                <p><strong>Ubicación:</strong> {{ oferta['ubicacion'] }}</p>
+                                <p><strong>Salario:</strong> {{ oferta['salario'] }}</p>
+                                <a class="btn-ver-oferta" href="{{ oferta['link'] }}" target="_blank">Ver oferta</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No se encontraron ofertas en Trabajando.pe.</p>
+                {% endif %}
+            </div>
+
+            <!-- Sección de Computrabajo -->
+            <div class="ofertas-section">
+                <h2>
+                    <img src="{{ url_for('static', filename='Images/computrabajo_logo.png') }}" alt="Computrabajo Logo">
+                    Ofertas de Computrabajo
+                </h2>
+                {% if ofertas_computrabajo %}
+                    <div class="ofertas-lista">
+                        {% for oferta in ofertas_computrabajo %}
+                            <div class="oferta">
+                                <h3>{{ oferta['titulo'] }}</h3>
+                                <p><strong>Empresa:</strong> {{ oferta['empresa'] }}</p>
+                                <p><strong>Ubicación:</strong> {{ oferta['ubicacion'] }}</p>
+                                <a class="btn-ver-oferta" href="{{ oferta['link'] }}" target="_blank">Ver oferta</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No se encontraron ofertas en Computrabajo.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="volver">
+            <a href="{{ url_for('index') }}" class="btn-volver">Volver al formulario de búsqueda</a>
+        </div>
+        <section class="testimonios">
+            <h2>Lo que dicen nuestros usuarios</h2>
+            <div class="testimonios-container">
+                <div class="testimonio">
+                    <img src="{{ url_for('static', filename='Images/testimonio1.jpg') }}" alt="Testimonio 1">
+                    <p>"Gracias a esta plataforma, encontré el trabajo perfecto para mí. ¡Muy recomendada!"</p>
+                </div>
+                <div class="testimonio">
+                    <img src="{{ url_for('static', filename='Images/testimonio2.jpg') }}" alt="Testimonio 2">
+                    <p>"El proceso de búsqueda fue rápido y eficiente, encontré lo que buscaba en minutos."</p>
+                </div>
+                <div class="testimonio">
+                    <img src="{{ url_for('static', filename='Images/testimonio3.jpg') }}" alt="Testimonio 3">
+                    <p>"Nunca imaginé que sería tan fácil encontrar trabajos relevantes. ¡Excelente plataforma!"</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

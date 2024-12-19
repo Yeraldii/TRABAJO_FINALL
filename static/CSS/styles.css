@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fondo global para la página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* Fondo blanco */
+    color: #e0e0e0;  /* Texto claro para contraste */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../Images/fondo2.jpg') no-repeat; /* Cambiar a fondo2 */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilo para el formulario en el index */
+.wrapper {
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.input-box {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Contenedor principal de resultados */
+.container {
+    width: 90%; /* Ancho más grande para dar más espacio */
+    margin: 40px auto;
+    padding: 30px;
+    background: #313131; /* Fondo del cuadro de resultados de búsqueda */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    color: #a6bac3; /* Color de la letra del título */
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Título con fuente moderna */
+}
+
+h1 img {
+    margin-right: 10px;
+    width: 60px; /* Aumentar el tamaño del logo */
+    height: 60px; /* Aumentar el tamaño del logo */
+}
+
+/* Estilo de las secciones de ofertas */
+.ofertas-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.ofertas-section {
+    padding: 20px;
+    background-color: #6c737a; /* Fondo de las tres secciones */
+    border: 1px solid #555;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.ofertas-section h2 {
+    display: flex;
+    align-items: center;
+    font-size: 1.8em;
+    color: #bacada;  /* Color del título de las tres secciones */
+    margin-bottom: 20px;
+}
+
+.ofertas-section h2 img {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.ofertas-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajustar automáticamente el número de columnas */
+    gap: 20px;
+}
+
+/* Estilo específico para la sección de Jora */
+.ofertas-section.jora .ofertas-lista {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    display: grid;
+}
+
+.oferta {
+    padding: 15px;
+    background-color: #2c3e46; /* Fondo de cada oferta de trabajo */
+    border: 1px solid #555;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.oferta:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.oferta h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #b4cce3; /* Color del título del trabajo */
+}
+
+.oferta p {
+    font-size: 1em;
+    color: #fff; /* Color del contenido del trabajo */
+}
+
+.oferta .btn-ver-oferta {
+    padding: 10px 18px;
+    background-color: #d3d3d3;  /* Gris claro */
+    color: #333;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.oferta .btn-ver-oferta:hover {
+    background-color: #bbb;
+}
+
+/* Sección de testimonios */
+.testimonios {
+    background-color: #222;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 8px;
+}
+
+.testimonios h2 {
+    font-size: 2em;
+    color: #d3d3d3;  /* Gris claro */
+    margin-bottom: 30px;
+}
+
+.testimonios-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonio {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 30%;
+    text-align: center;
+}
+
+.testimonio img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.testimonio p {
+    color: #bbb;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .testimonios-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonio {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    /* Hacer que las ofertas también sean más grandes en pantallas pequeñas */
+    .ofertas-container {
+        grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+    }
+
+    .ofertas-lista {
+        grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+    }
+}
+
+/* Estilo para el botón de volver */
+.btn-volver {
+    display: inline-block;
+    position: fixed;
+    top: 50%;
+    left: 0;  /* Lo posicionamos a la izquierda */
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    background-color: #333;  /* Negro para el fondo */
+    color: #fff; /* Blanco para el texto */
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.btn-volver:hover {
+    background-color: #555;  /* Gris más oscuro para el hover */
+}
+
+/* Estilo de los mensajes de error o vacío */
+p {
+    font-size: 1em;
+    color: #777;
+    text-align: center;
+}

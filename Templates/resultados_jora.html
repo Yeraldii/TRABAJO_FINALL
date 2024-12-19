@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Jora</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="imagen-header"></div> <!-- Sección con imagen de fondo -->
+    <div class="container">
+        <h1>Resultados de Jora</h1>
+
+        <div class="ofertas-container">
+            <div class="ofertas-section">
+                <h2>Ofertas de Jora</h2>
+                {% if ofertas_jora %}
+                    <div class="ofertas-lista">
+                        {% for oferta in ofertas_jora %}
+                            <div class="oferta">
+                                <h3>{{ oferta['titulo'] }}</h3>
+                                <p><strong>Empresa:</strong> {{ oferta['empresa'] }}</p>
+                                <p><strong>Ubicación:</strong> {{ oferta['ubicacion'] }}</p>
+                                <a class="btn-ver-oferta" href="{{ oferta['link'] }}" target="_blank">Ver oferta</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No se encontraron ofertas en Jora.</p>
+                {% endif %}
+            </div>
+        </div> <!-- Fin del contenedor de ofertas -->
+
+        <!-- Botón de volver al formulario -->
+        <div class="volver">
+            <a href="{{ url_for('index') }}" class="btn-volver">Volver al formulario de búsqueda</a>
+        </div>
+
+        <!-- Sección de testimonios -->
+        <section class="testimonios">
+            <h2>Lo que dicen nuestros usuarios</h2>
+            <div class="testimonios-container">
+                <div class="testimonio">
+                    <img src="{{ url_for('static', filename='images/testimonio1.jpg') }}" alt="Testimonio 1">
+                    <p>"Gracias a esta plataforma, encontré el trabajo perfecto para mí. ¡Muy recomendada!"</p>
+                </div>
+                <div class="testimonio">
+                    <img src="{{ url_for('static', filename='images/testimonio2.jpg') }}" alt="Testimonio 2">
+                    <p>"El proceso de búsqueda fue rápido y eficiente, encontré lo que buscaba en minutos."</p>
+                </div>
+                <div class="testimonio">
+                    <img src="{{ url_for('static', filename='images/testimonio3.jpg') }}" alt="Testimonio 3">
+                    <p>"Nunca imaginé que sería tan fácil encontrar trabajos relevantes. ¡Excelente plataforma!"</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
